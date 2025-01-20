@@ -7,7 +7,6 @@ services:
     command: >
       sh -c "
       python manage.py wait_for_db &&
-      python manage.py makemigrations &&
       python manage.py migrate &&
       python manage.py loaddata category_data.json &&
       python manage.py loaddata product_data.json &&
