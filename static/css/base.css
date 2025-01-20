@@ -1,0 +1,176 @@
+@import url('store.css');
+@import url('account.css');
+@import url('cart.css');
+@import url('order.css');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    background-color: snow;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px 10px 20px 30px;
+    border: 1px solid black;
+    background-color: #232323;
+    color: Snow;
+}
+
+nav a {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 40px 0 150px;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    text-decoration: none;
+    color: snow;
+    transition: color 0.3s ease, border-color 0.3s;
+}
+
+nav a:hover {
+    transform: scale(1.05);
+    border: 1px solid snow;
+    border-radius: 5px;
+}
+
+nav a img {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+.messages {
+    margin: 20px 0;
+    text-align: center;
+    width: 100%;
+    height: 20px;
+    }
+
+main {
+    margin: 20px 0;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    border: 1px solid black;
+    background-color: #232323;
+    color: Snow;
+}
+
+input {
+    border-radius: 3px;
+    width: 225px;
+}
+
+.pagination {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.pagination {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: black;
+}
+
+.pagination a:hover {
+    text-decoration: underline;
+}
+
+
+/*Buttons*/
+button {
+    display: inline-flex;
+    align-items: center;
+    color: white;
+    border: none;
+    margin: 20px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+button img {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.green-btn {
+    background: teal;
+}
+
+.red-btn {
+    background: crimson;
+}
+
+.blue-btn {
+    background: SteelBlue;
+}
+
+/*tables*/
+
+table {
+    width: 65%;
+    border-collapse: separate;
+    border-spacing: 0;
+    text-align: center;
+}
+
+table a {
+    text-decoration: underline;
+    color: black;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 0.5px solid black;
+}
+
+table thead th {
+    position: sticky;
+    top: 0;
+    background-color: #232323;
+    color: snow;
+    z-index: 1;
+}
+
+table tfoot tr {
+    bottom: 0;
+    background-color: #232323;
+    color: snow;
+    z-index: 1;
+}
+
+table thead th:first-child {
+    border-top-left-radius: 5px;
+}
+
+table thead th:last-child {
+    border-top-right-radius: 5px;
+}
+
+table tfoot td:first-child {
+    border-bottom-left-radius: 5px;
+}
+
+table tfoot td:last-child {
+    border-bottom-right-radius: 5px;
+}
+
+table img {
+    width: 90px;
+    height: 60px;
+}

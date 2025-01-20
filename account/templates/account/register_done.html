@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="account-frame" id="register-done">
+<h3>Welcome {{ new_user.username }}!</h3>
+<h4>Now you can <a href="{% url 'login' %}">Log in</a></h4>
+    <h4>or</h4>
+    <h4>return to main account menu <a href="{% url 'account_menu' %}">click here.</a></h4>
+</div>
+{% endblock %}

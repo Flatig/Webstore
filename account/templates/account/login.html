@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="account-frame" id="login">
+        <h3>Please, use the following form to log-in:</h3>
+        <form method="post">
+            {{ login_form.as_p }}
+            {% csrf_token %}
+            <button class="green-btn" type="submit">Log in</button>
+            <button class="red-btn" type="button" onclick="window.location.href='{% url 'account_menu' %}'">Cancel
+            </button>
+        </form>
+        <h4>Forgot your password? To reset your password
+            <a href="{% url 'password_reset' %}">click here.</a>
+        </h4>
+    </div>
+{% endblock %}

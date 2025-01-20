@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="store-frame" id="product-detail">
+    <img src="{{ product.get_image }}" alt="Profile Image"> {# get_image in models.py #}
+    <p>Category: {{ product.category }}</p>
+    <p>Name: {{ product.name }}</p>
+    <p>Description: {{ product.description }}</p>
+    <p>Price: {{ product.price }} $</p>
+    <p>Available: {{ product.available }}</p>
+    {% if product in cart_products %}
+    <button class="blue-btn" disabled>
+        <img src="{% static 'images/icons/check.svg' %}" alt="Check"/>Already added
+    </button>
+    {% else %}
+    <form action="{% url 'cart:cart_add' product.slug %}" method="post">
+        {% csrf_token %}
+        <button class="green-btn" type="submit">
+            <img src="{% static 'images/icons/add.svg' %}" alt="Add"/>Add to cart
+        </button>
+    </form>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="search-field">
+    <form method="get" action="{% url 'store:store_search' %}">
+        {{ search_form.as_p }}
+        <button class="green-btn" id="search-btn" type="submit">
+            <img src="{% static 'images/icons/search.svg' %}" alt="Search"/>
+        </button>
+    </form>
+</div>
+<div class="category-list">
+    <h2>Choose Category:</h2>
+    <div class="category">
+        {% for category in categories %}
+        <a href="{% url 'store:category_products' category.slug %}">{{ category.name }}</a>
+        {% endfor %}
+    </div>
+</div>
+<div class="product-list">
+    {% for product in page_obj.object_list %}
+    {% if product in cart_products %}
+    <div class="product">
+        <img src="{{ product.get_image }}" alt="Product Image"> {# get_image in models.py #}
+        <p>
+            <a href="{% url 'store:product_detail' product.slug %}">
+                Name: {{ product.name }}
+            </a>
+        </p>
+        <p>{{ product.price }}</p>
+        <button class="blue-btn" disabled>
+            <img src="{% static 'images/icons/check.svg' %}" alt="Check"/>Already added
+        </button>
+    </div>
+    {% else %}
+    <div class="product">
+        <img src="{{ product.get_image }}" alt="Product Image"> {# get_image in models.py #}
+        <p><a href="{% url 'store:product_detail' product.slug %}">Name: {{ product.name }}</a></p>
+        <p>{{ product.price }}</p>
+        <form action="{% url 'cart:cart_add' product.slug %}" method="post">
+            {% csrf_token %}
+            <button class="green-btn" type="submit">
+                <img src="{% static 'images/icons/add.svg' %}" alt="Add"/>Add to cart
+            </button>
+        </form>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% include "store/pagination.html" %}
+</div>
+{% endblock %}

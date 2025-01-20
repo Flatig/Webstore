@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Store</title>
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+</head>
+<body>
+<header>
+    <h1>Web Store</h1>
+    <nav>
+        <a href="{% url 'store:store_list' %}">
+            <img src="{% static 'images/icons/home.svg' %}" alt="Home"/>HOME
+        </a>
+        <a href="{% url 'cart:cart_list' %}">
+            <img src="{% static 'images/icons/cart.svg' %}" alt="Cart"/>CART
+        </a>
+        <a href="{% url 'order:order_list' %}">
+            <img src="{% static 'images/icons/order.svg' %}" alt="Order"/>ORDER
+        </a>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'account_menu' %}">
+            <img src="{% static 'images/icons/account.svg' %}" alt="Account"/>{{ request.user.username }}</a>
+        {% else %}
+        <a href="{% url 'account_menu' %}">
+            <img src="{% static 'images/icons/account.svg' %}" alt="Account"/>ACCOUNT</a>
+        {% endif %}
+    </nav>
+</header>
+<div class="messages">
+    {% if messages %}
+    {% for message in messages %}
+    <h3>{{ message }}</h3>
+    {% endfor %}
+    {% endif %}
+</div>
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+<footer>
+    <h3>2025. View-only access.</h3>
+</footer>
+</body>
+</html>

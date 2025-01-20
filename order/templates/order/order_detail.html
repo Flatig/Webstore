@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="order-frame" id="order-details">
+    <div class="order-details-info">
+        <div>
+            <h3>Recipient</h3>
+            <p><strong>Name:</strong><span>{{ order.name }}</span></p>
+            <p><strong>Email:</strong><span>{{ order.email }}</span></p>
+            <p><strong>Address:</strong><span>{{ order.address }}</span></p>
+            <p><strong>City:</strong><span>{{ order.city }}</span></p>
+        </div>
+        <div>
+            <h3>Details</h3>
+            <p><strong>Status:</strong><span>{{ order.get_status_display }}</span></p>
+            <p><strong>Paid:</strong><span>{{ order.paid }}</span></p>
+            <p><strong>Created:</strong><span>{{ order.created }}</span></p>
+            <p><strong>Updated:</strong><span>{{ order.updated }}</span></p>
+        </div>
+    </div>
+    <div class="order-items-info">
+        <h3>Order items</h3>
+        <table>
+            <tbody>
+            {% for item in order_items %}
+            <tr>
+                <td>{{ item.list_number }}</td>
+                <td>
+                    <a href="{% url 'store:product_detail' item.product.slug %}">
+                        {{ item.product.name }}
+                    </a>
+                </td>
+                <td>
+                    {% if item.product.image %}
+                    <img src="{{ item.product.image.url }}" alt="{{ product.name }}">
+                    {% else %}
+                    <img src="{% static 'images/no_image.jpg' %}" alt="Default Image">
+                    {% endif %}
+                </td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.price }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="4"><strong>Total quantity: {{ order.total_quantity }}</strong></td>
+                <td colspan="2"><strong>Total price: {{ order.total_price }}</strong></td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+{% endblock %}
