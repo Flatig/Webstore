@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="account-frame" id="account-menu">
+    <h3>Account Menu</h3>
+    <h4><a href="{% url 'login' %}">Login</a></h4>
+    <p>or</p>
+    <h4><a href="{% url 'register' %}">Registration</a></h4>
+</div>
+{% endblock %}

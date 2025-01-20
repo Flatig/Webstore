@@ -1,0 +1,287 @@
+[
+{
+  "model": "store.product",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "name": "One",
+    "slug": "one",
+    "image": "product_image/One/Image1.jpeg",
+    "description": "sample",
+    "price": "101.00",
+    "available": true,
+    "created": "2024-12-07T15:16:25.957Z",
+    "updated": "2024-12-07T15:16:25.958Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 2,
+  "fields": {
+    "category": 1,
+    "name": "Two",
+    "slug": "two",
+    "image": "product_image/Two/Image2.jpeg",
+    "description": "sample",
+    "price": "102.00",
+    "available": true,
+    "created": "2024-12-07T15:16:50.277Z",
+    "updated": "2024-12-07T15:16:50.277Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 3,
+  "fields": {
+    "category": 1,
+    "name": "Three",
+    "slug": "three",
+    "image": "product_image/Three/Image3.jpeg",
+    "description": "sample",
+    "price": "103.00",
+    "available": true,
+    "created": "2024-12-07T15:17:15.109Z",
+    "updated": "2024-12-07T15:17:15.109Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 4,
+  "fields": {
+    "category": 2,
+    "name": "Four",
+    "slug": "four",
+    "image": "product_image/Four/Image4.jpeg",
+    "description": "sample",
+    "price": "204.00",
+    "available": true,
+    "created": "2024-12-07T15:17:38.573Z",
+    "updated": "2024-12-07T15:17:38.573Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 5,
+  "fields": {
+    "category": 2,
+    "name": "Five",
+    "slug": "five",
+    "image": "product_image/Five/Image5.jpeg",
+    "description": "sample",
+    "price": "205.00",
+    "available": true,
+    "created": "2024-12-07T15:18:04.315Z",
+    "updated": "2024-12-07T15:18:04.315Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 6,
+  "fields": {
+    "category": 2,
+    "name": "Six",
+    "slug": "six",
+    "image": "product_image/Six/Image6.jpeg",
+    "description": "sample",
+    "price": "206.00",
+    "available": true,
+    "created": "2024-12-07T15:18:27.211Z",
+    "updated": "2024-12-07T15:18:27.211Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 7,
+  "fields": {
+    "category": 3,
+    "name": "Seven",
+    "slug": "seven",
+    "image": "product_image/Seven/Image7.jpeg",
+    "description": "sample",
+    "price": "307.00",
+    "available": true,
+    "created": "2024-12-07T15:18:51.980Z",
+    "updated": "2024-12-07T15:18:51.980Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 8,
+  "fields": {
+    "category": 3,
+    "name": "Eight",
+    "slug": "eight",
+    "image": "product_image/Eight/Image8.jpeg",
+    "description": "sample",
+    "price": "308.00",
+    "available": true,
+    "created": "2024-12-07T15:19:24.215Z",
+    "updated": "2024-12-07T15:19:24.215Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 9,
+  "fields": {
+    "category": 3,
+    "name": "Nine",
+    "slug": "nine",
+    "image": "product_image/Nine/Image9.jpeg",
+    "description": "sample",
+    "price": "309.00",
+    "available": true,
+    "created": "2024-12-07T15:20:07.288Z",
+    "updated": "2024-12-07T15:20:07.288Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 10,
+  "fields": {
+    "category": 4,
+    "name": "Ten",
+    "slug": "ten",
+    "image": "product_image/Ten/Image10.jpeg",
+    "description": "sample",
+    "price": "410.00",
+    "available": true,
+    "created": "2024-12-07T15:20:40.543Z",
+    "updated": "2024-12-07T15:20:40.543Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 11,
+  "fields": {
+    "category": 4,
+    "name": "Eleven",
+    "slug": "eleven",
+    "image": "product_image/Eleven/Image11.jpeg",
+    "description": "sample",
+    "price": "411.00",
+    "available": true,
+    "created": "2024-12-07T15:21:24.602Z",
+    "updated": "2024-12-07T15:21:24.602Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 12,
+  "fields": {
+    "category": 4,
+    "name": "Twelve",
+    "slug": "twelve",
+    "image": "product_image/Twelve/Image12.jpeg",
+    "description": "sample",
+    "price": "412.00",
+    "available": true,
+    "created": "2024-12-07T15:21:50.846Z",
+    "updated": "2024-12-07T15:21:50.846Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 13,
+  "fields": {
+    "category": 5,
+    "name": "Thirteen",
+    "slug": "thirteen",
+    "image": "product_image/Thirteen/Image13.jpeg",
+    "description": "sample",
+    "price": "513.00",
+    "available": true,
+    "created": "2024-12-07T15:22:35.514Z",
+    "updated": "2024-12-07T15:22:35.514Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 14,
+  "fields": {
+    "category": 5,
+    "name": "Forteen",
+    "slug": "fourteen",
+    "image": "product_image/Forteen/Image14.jpeg",
+    "description": "sample",
+    "price": "514.00",
+    "available": true,
+    "created": "2024-12-07T15:23:18.163Z",
+    "updated": "2024-12-07T15:23:18.163Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 15,
+  "fields": {
+    "category": 5,
+    "name": "Fifteen",
+    "slug": "fifteen",
+    "image": "product_image/Fifteen/Image15.jpeg",
+    "description": "sample",
+    "price": "515.00",
+    "available": true,
+    "created": "2024-12-07T15:24:17.304Z",
+    "updated": "2024-12-07T15:24:17.304Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 16,
+  "fields": {
+    "category": 6,
+    "name": "Sixteen",
+    "slug": "sixteen",
+    "image": "product_image/Sixteen/Image16.jpeg",
+    "description": "sample",
+    "price": "6016.00",
+    "available": true,
+    "created": "2024-12-07T15:24:46.317Z",
+    "updated": "2024-12-07T15:24:46.317Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 17,
+  "fields": {
+    "category": 6,
+    "name": "Seventeen",
+    "slug": "seventeen",
+    "image": "product_image/Seventeen/Image17.jpeg",
+    "description": "sample",
+    "price": "6017.00",
+    "available": true,
+    "created": "2024-12-07T15:25:16.091Z",
+    "updated": "2024-12-07T15:25:16.091Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 18,
+  "fields": {
+    "category": 6,
+    "name": "Eighteen",
+    "slug": "Eighteen",
+    "image": "",
+    "description": "sample",
+    "price": "6018.00",
+    "available": true,
+    "created": "2024-12-07T15:25:53.709Z",
+    "updated": "2024-12-07T15:25:53.709Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 19,
+  "fields": {
+    "category": 6,
+    "name": "Nineteen",
+    "slug": "nineteen",
+    "image": "",
+    "description": "sample",
+    "price": "6019.00",
+    "available": true,
+    "created": "2024-12-07T15:26:26.286Z",
+    "updated": "2024-12-07T15:26:26.286Z"
+  }
+}
+]

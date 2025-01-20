@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="account-frame" id="profile">
+    <div class="profile-info">
+        <img src="{{ user.profile.get_image }}" alt="Profile Image">    {# get_image in models.py #}
+        <p>Username: {{ user.username }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Date of Birth: {{ user.profile.date_of_birth|default:"Not provided" }}</p>
+    </div>
+    <div class="profile-dashboard">
+        <a href="{% url 'edit' username=user.username %}">Edit</a>
+        <a href="{% url 'password_change' %}">Change password</a>
+        <a href="{% url 'logout' %}">Logout</a>
+    </div>
+</div>
+{% endblock %}

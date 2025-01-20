@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+{% if cart_items %}
+<div class="cart-list">
+    <table>
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Unit price</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in cart_items %}
+        <tr>
+            <td>{{ item.list_number }}</td>
+            <td>
+                <a href="{% url 'store:product_detail' item.product.slug %}">
+                    {{ item.product.name }}
+                </a>
+            </td>
+            <td>
+                {% if item.product.image %}
+                <img src="{{ item.product.image.url }}" alt="{{ product.name }}">
+                {% else %}
+                <img src="{% static 'images/no_image.jpg' %}" alt="Default Image">
+                {% endif %}
+            </td>
+            <td>{{ item.product.price }}</td>
+            <td>
+                <form method="post" action="{% url 'cart:cart_update' item.product.slug %}">
+                    {% csrf_token %}
+                    <input type="number" name="quantity" value="{{ item.quantity }}" min="1">
+                    <button class="blue-btn" type="submit">
+                        <img src="{% static 'images/icons/update.svg' %}" alt="Update"/>Update
+                    </button>
+                </form>
+            </td>
+            <td>{{ item.price }}</td>
+            <td>
+                <button class="red-btn" id="remove-btn" type="button"
+                        onclick="window.location.href='{% url 'cart:cart_remove' item.product.slug %}'">
+                    <img src="{% static 'images/icons/remove.svg' %}" alt="Remove"/>Remove
+                </button>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="3"><strong>Total by list: {{ total_list_number }}</strong></td>
+            <td colspan="2"><strong>Total quantity: {{ cart.total_quantity }}</strong></td>
+            <td><strong>Total price: {{ cart.total_price }}</strong></td>
+            <td>
+                <button class="green-btn" type="button" id="order-create-btn"
+                        onclick="window.location.href='{% url 'order:order_create' %}'">
+                    <img src="{% static 'images/icons/add.svg' %}" alt="Add"/>Create Order
+                </button>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+{% else %}
+<div id="cart-empty">
+    <h3>Your cart is empty</h3>
+</div>
+{% endif %}
+{% endblock %}

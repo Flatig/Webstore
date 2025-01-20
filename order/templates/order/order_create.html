@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="order-frame" id="order-create">
+    <div class="order-items-info">
+        <h3>Order items</h3>
+        <table>
+            <tbody>
+            {% for item in cart_items %}
+            <tr>
+                <td>{{ item.list_number }}</td>
+                <td>
+                    <a href="{% url 'store:product_detail' item.product.slug %}">
+                        {{ item.product.name }}
+                    </a>
+                </td>
+                <td>
+                    {% if item.product.image %}
+                    <img src="{{ item.product.image.url }}" alt="{{ product.name }}">
+                    {% else %}
+                    <img src="{% static 'images/no_image.jpg' %}" alt="Default Image">
+                    {% endif %}
+                </td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.price }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="2"></td>
+                <td colspan="2"><strong>Total quantity: {{ cart.total_quantity }}</strong></td>
+                <td colspan="2"><strong>Total price: {{ cart.total_price }}</strong></td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+      <h3>Recipient</h3>
+    <div class="order-create-form">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="order-create-field">
+                <strong>{{ order_create_form.name.label_tag }} {{ order_create_form.name }}</strong>
+                <small>{{ order_create_form.name.help_text }}</small>
+            </div>
+            <div class="order-create-field">
+                <strong>{{ order_create_form.email.label_tag }} {{ order_create_form.email }}</strong>
+                <small>{{ order_create_form.email.help_text }}</small>
+            </div>
+            <div class="order-create-field">
+                <strong>{{ order_create_form.address.label_tag }} {{ order_create_form.address }}</strong>
+                <small>{{ order_create_form.address.help_text }}</small>
+            </div>
+            <div class="order-create-field">
+                <strong>{{ order_create_form.city.label_tag }} {{ order_create_form.city }}</strong>
+                <small>{{ order_create_form.city.help_text }}</small>
+            </div>
+            <button class="green-btn" type="submit">Create</button>
+            <button class="red-btn" type="button" onclick="window.location.href='{% url 'cart:cart_list' %}'">Cancel
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

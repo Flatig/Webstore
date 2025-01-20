@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="account-frame" id="edit">
+    <h4>You can edit your account using the following form:</h4>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="edit-field">
+            {{ user_edit_form.email.label_tag }} {{ user_edit_form.email }}
+        </div>
+        <div class="edit-field">
+            {{ profile_edit_form.image.label_tag }} {{ profile_edit_form.image }}
+        </div>
+        <div class="edit-field">
+            {{ profile_edit_form.date_of_birth.label_tag }} {{ profile_edit_form.date_of_birth }}
+        </div>
+        <button class="green-btn" type="submit">Confirm</button>
+        <button class="red-btn" type="button"
+                onclick="window.location.href='{% url 'profile' username=user.username %}'">Cancel
+        </button>
+    </form>
+</div>
+{% endblock %}

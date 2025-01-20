@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="account-frame" id="register">
+    <h3>Create an account</h3>
+    <h4>Please, register using the following form:</h4>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="register-field">
+            {{ register_form.username.label_tag }} {{ register_form.username }}
+            <small>{{ register_form.username.help_text }}</small>
+        </div>
+        <div class="register-field">
+            {{ register_form.email.label_tag }} {{ register_form.email }}
+            <small>{{ register_form.email.help_text }}</small>
+        </div>
+        <div class="register-field">
+            {{ register_form.password.label_tag }} {{ register_form.password }}
+            <small>{{ register_form.password.help_text }}</small>
+        </div>
+        <div class="register-field">
+            {{ register_form.password2.label_tag }} {{ register_form.password2 }}
+            <small>{{ register_form.password2.help_text }}</small>
+        </div>
+        <div class="register-field">
+            {{ register_form.image.label_tag }} {{ register_form.image }}
+            <small>{{ register_form.image.help_text }}</small>
+        </div>
+        <div class="register-field">
+            {{ register_form.date_of_birth.label_tag }} {{ register_form.date_of_birth }}
+            <small>{{ register_form.date_of_birth.help_text }}</small>
+        </div>
+        <button class="green-btn" type="submit">Register</button>
+        <button class="red-btn" type="button" onclick="window.location.href='{% url 'account_menu' %}'">Cancel
+        </button>
+    </form>
+</div>
+{% endblock %}

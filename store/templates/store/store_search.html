@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="body-frame" id="store-search">
+    <div class="search-field">
+        <form method="get" action="{% url 'store:store_search' %}">
+            {{ search_form.as_p }}
+            <button class="green-btn" id="search-btn" type="submit">
+                <img src="{% static 'images/icons/search.svg' %}" alt="Search"/>
+            </button>
+        </form>
+    </div>
+
+    <div class="search-results">
+        {% if products %}
+        {% for product in products %}
+        <div class="product-item">
+            <h4><a href="{% url 'store:product_detail' product.slug %}">Name: {{ product.name }}</a></h4>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
