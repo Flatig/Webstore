@@ -1,8 +1,5 @@
 This is an online store built using Django. The project supports:
-account management; 
-product management; 
-cart and order management;
-product search functionality.
+account management (django_auth), product management, cart and order management, product search functionality (postgres trigram).
 
 Follow these steps to deploy the application:
 1. docker compose up --build
